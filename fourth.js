@@ -1,44 +1,4 @@
-// First task
-
-function count(arr) {
-
-    let values = {
-        min: Math.min(...arr),
-        max: Math.max(...arr),
-        sum: arr.reduce((a, b) => a + b),
-        arr: arr
-    };
-    arr[arr.indexOf(values.min)] = values.max;
-    arr[arr.indexOf(values.max)] = values.min;
-
-    return values;
-}
-
-console.log(count([1, 50, 6, -7, 10, 30]));
-
-// Second task
-
-
-// Third task
-
-function replaceNumbers(...args) {
-    return args.map(number => {
-        if (!(number % 3) && !(number % 7)) {
-            return 'foobar';
-        }
-        if (!(number % 7)) {
-            return 'foo';
-        }
-        if (!(number % 3)) {
-            return 'bar';
-        }
-        return number;
-    })
-}
-
-console.log(replaceNumbers(1, 16, 21, 30, 150));
-
-// Fourth task
+// Create function with 2 string params. It must check if letters in the first correspond to the number of matches in second and return %.
 
 function compareStrings(str1, str2) {
     let count = {};
