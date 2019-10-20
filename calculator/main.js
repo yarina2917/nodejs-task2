@@ -1,11 +1,11 @@
 function drawCalculator() {
-    const valuesContainer = document.querySelector('.values');
-    const values = [0,1,2,3,4,5,6,7,8,9,'*','/','+','-'];
+    let valuesContainer = document.querySelector('.values');
+    let values = [0,1,2,3,4,5,6,7,8,9,'*','/','+','-'];
     valuesContainer.addEventListener('click', valuesHandler);
     addElements(values, valuesContainer);
 
-    const actionsContainer = document.querySelector('.actions');
-    const actions = ['Reset', 'Result'];
+    let actionsContainer = document.querySelector('.actions');
+    let actions = ['Reset', 'Result'];
     actionsContainer.addEventListener('click', actionsHandler);
     addElements(actions, actionsContainer);
 }
@@ -19,10 +19,10 @@ function addElements(arr, container) {
 }
 
 function valuesHandler(e) {
-    const resultContainer = document.querySelector('.result');
+    let resultContainer = document.querySelector('.result');
     if (resultContainer.innerHTML.indexOf('=') === -1) {
-        const newValue = e.target.innerHTML;
-        const currentValue = resultContainer.innerHTML.trim();
+        let newValue = e.target.innerHTML;
+        let currentValue = resultContainer.innerHTML.trim();
         // check if newValue is number or math operation
         if (isNaN(+newValue)) {
             // if last element is math operation, replace it with new, else add with whitespaces
@@ -39,8 +39,8 @@ function valuesHandler(e) {
 
 
 function actionsHandler(e) {
-    const resultContainer = document.querySelector('.result');
-    const action = e.target.innerHTML;
+    let resultContainer = document.querySelector('.result');
+    let action = e.target.innerHTML;
     if (action === 'Result' && resultContainer.innerHTML.indexOf('=') === -1) {
         calculate(resultContainer.innerHTML.split(' '));
     } else if (action === 'Reset') {
@@ -57,8 +57,8 @@ function calculate(arr) {
     };
 
     // fill arrays with numbers and it's math operations
-    const numbers = [];
-    const operations = [];
+    let numbers = [];
+    let operations = [];
 
     arr.forEach(el => {
         isNaN(+el) ? operations.push(el) : numbers.push(el);
@@ -84,4 +84,3 @@ function calculate(arr) {
 }
 
 drawCalculator();
-
