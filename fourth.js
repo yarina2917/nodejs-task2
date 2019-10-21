@@ -14,7 +14,7 @@ function compareStrings(str1, str2) {
             }
         }
     }
-    return (count * 2 / (str1.length + str2.length)).toFixed(2) + '%';
+    return 100 * (count * 2 / (str1.length + str2.length)).toFixed(2) + '%';
 }
 
 console.log(compareStrings('qqwerty', 'qqqwww'));
